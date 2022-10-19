@@ -1,7 +1,7 @@
 # AIMV
 AI model that generates a Music Video from a .wav file, using Instrument Classification, Speech Transcription, and Video Generation. 
 ## *Architecture*:
-### Content Transcription
+### **Content Transcription**
   #### Instrument Classification
     - [Musical Instrument Identification:](https://www.mdpi.com/1424-8220/22/8/3033/pdf?version=1650009477)
     
@@ -19,6 +19,6 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
       return (heart, crash, splash, drum, soft, hexcolorvalue)
       vocal transcription + 3 most relevant instrument identifications + valence of the action (from timbre) + color (from frequency)
       
-### Video Generation
+### **Video Generation**
   [CogVideo](https://github.com/THUDM/CogVideo) uses Transformer Neural Networks
   [CogVideoPaper](https://github.com/THUDM/CogVideo)
