@@ -22,14 +22,18 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
       -   Volume relative to the running average volume + Vocal transcription + 3 most relevant instrument identifications + color (from frequency)
   
     We then port this list to a sentence. 
-      -   Volume informs the intensity of the image, ie if loud/quiet vocal saying Heart, say "person screaming/yelling/whispering, action + object
-        - Action being looking at, running at, holding, etc, the object in question ("heart"). Choose action randomly. 
-        - Further abstract the crash, splash, drum (transient description) by mapping these to additional words, 
-          - crash -> impact, splash -> wave, drum (being the most general category, can be ignored). (impact, wave)
+    
+      - Volume informs the intensity of the image, ie if loud/quiet vocal saying Heart, say "person screaming/yelling/whispering, action + object
+     
+      - Action being looking at, running at, holding, etc, the object in question ("heart"). Choose action randomly. 
+    
+      - Further abstract the crash, splash, drum (transient description) by mapping these to additional words, 
+ 
+        - crash -> impact, splash -> wave, drum (being the most general category, can be ignored). (impact, wave)
             - Category (drum, guitar, vocal) determines the verb (hits, plays, sings)
-          - (kick, bass, drum) -> (canon, deep)
-          - (note, string, guitar) -> (floating, vibrate)
-          - add these abstracted words to the final text description
+        - (kick, bass, drum) -> (canon, deep)
+        - (note, string, guitar) -> (floating, vibrate)
+        - add these abstracted words to the final text description
     Examples:
       - (loud, heart, crash, splash, drum, hexcolorvalue, impact, wave) -> "Person loudly sings 'heart' over a soft drum crash hit that feels like a wave impact, the scene has a (hexcolorvalue) color palette 
       - (loud, N/A, kick, bass, drum, hexcolorvalue, canon, deep) -> "Kick drum loud hit that feels like a deep canon, the scene has a (hexcolorvalue) color palette
