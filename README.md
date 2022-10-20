@@ -17,8 +17,10 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
   - #### Concatenation of the above into a general content transcription
     For an audio window of length 1 second containing a Vocal saying "Heart" over a soft drum crash hit:
       - Return (loud, heart, crash, splash, drum, hexcolorvalue)
+ 
     This translates to:
       -   Volume relative to the running average volume + Vocal transcription + 3 most relevant instrument identifications + color (from frequency)
+  
     We then port this list to a sentence. 
       -   Volume informs the intensity of the image, ie if loud/quiet vocal saying Heart, say "person screaming/yelling/whispering, action + object
         - Action being looking at, running at, holding, etc, the object in question ("heart"). Choose action randomly. 
@@ -28,10 +30,10 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
           - (kick, bass, drum) -> (canon, deep)
           - (note, string, guitar) -> (floating, vibrate)
           - add these abstracted words to the final text description
-          - Examples:
-            - (loud, heart, crash, splash, drum, hexcolorvalue, impact, wave) -> "Person loudly sings 'heart' over a soft drum crash hit that feels like a wave impact, the scene has a (hexcolorvalue) color palette 
-            - (loud, N/A, kick, bass, drum, hexcolorvalue, canon, deep) -> "Kick drum loud hit that feels like a deep canon, the scene has a (hexcolorvalue) color palette
-            - (quiet, N/A, note, string, guitar, hexcolorvalue, floating, vibrate) -> "Guitar quietly plays a note that feels like a vibrate floating, the scene has a (hexcolorvalue) color palette.  
+    Examples:
+      - (loud, heart, crash, splash, drum, hexcolorvalue, impact, wave) -> "Person loudly sings 'heart' over a soft drum crash hit that feels like a wave impact, the scene has a (hexcolorvalue) color palette 
+      - (loud, N/A, kick, bass, drum, hexcolorvalue, canon, deep) -> "Kick drum loud hit that feels like a deep canon, the scene has a (hexcolorvalue) color palette
+      - (quiet, N/A, note, string, guitar, hexcolorvalue, floating, vibrate) -> "Guitar quietly plays a note that feels like a vibrate floating, the scene has a (hexcolorvalue) color palette.  
 
 ### **Video Generation**
   - [CogVideo](https://github.com/THUDM/CogVideo) uses Transformer Neural Networks
