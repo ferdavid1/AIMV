@@ -16,9 +16,10 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
     
   - #### Concatenation of the above into a general content transcription
     For an audio window of length 1 second containing a Vocal saying "Heart" over a soft drum crash hit:
-      - Return (heart, loud, crash, splash, drum, hexcolorvalue)
-      - This is:
+      - Return (loud, heart, crash, splash, drum, hexcolorvalue)
+    This translates to:
       -   Volume relative to the running average volume + Vocal transcription + 3 most relevant instrument identifications + color (from frequency)
+    We then port this list to a sentence. 
       -   Volume informs the intensity of the image, ie if loud/quiet vocal saying Heart, say "person screaming/yelling/whispering, action + object
         - Action being looking at, running at, holding, etc, the object in question ("heart"). Choose action randomly. 
         - Further abstract the crash, splash, drum (transient description) by mapping these to additional words, 
