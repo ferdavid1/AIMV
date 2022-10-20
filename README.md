@@ -34,7 +34,7 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
         - (note, string, guitar) -> (floating, vibrate)
         - add these abstracted words to the final text description
 
-      - Category (drum, guitar, vocal) determines the verb (hits, plays, sings)
+      - Category (drum, guitar, vocal, piano, bass) given by the last element of the initial transient description determines the verb (hits, plays, sings)
 
     Examples:
       - (loud, heart, crash, splash, drum, hexcolorvalue, impact, wave) -> "Person loudly sings 'heart' over a soft drum crash hit that feels like a wave impact, the scene has a (hexcolorvalue) color palette 
