@@ -16,8 +16,8 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
     
   - #### Concatenation of the above into a general content transcription
     For an audio window of length 1 second containing a Vocal saying "Heart" over a soft drum crash hit:
-      return (heart, crash, splash, drum, soft, hexcolorvalue)
-      vocal transcription + 3 most relevant instrument identifications + valence of the action (from timbre) + color (from frequency)
+      - return (heart, crash, splash, drum, soft, hexcolorvalue)
+      - This is vocal transcription + 3 most relevant instrument identifications + valence of the action (from timbre) + color (from frequency)
       
 ### **Video Generation**
   - [CogVideo](https://github.com/THUDM/CogVideo) uses Transformer Neural Networks
