@@ -15,31 +15,41 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
     [Whisper](https://github.com/openai/whisper) uses Transformer Neural Networks
     
   - #### Concatenation of the above into a general content transcription
-    For an audio window of length 1 second containing a Vocal saying "Heart" over a soft drum crash hit:
-      - Return (loud, heart, crash, splash, drum, hexcolorvalue)
+    For an audio window of length 1 second containing a Vocal saying loudly "Heart" over a crash cymbal hit:
+      - Return (loud, heart, crash, splash, synth, hexcolorvalue)
  
     This translates to:
-      -   Volume relative to the running average volume + Vocal transcription + 3 most relevant instrument identifications + color (from frequency)
+      -   Volume relative to the running average volume + Vocal transcription + 3 most confident instrument identifications + color name (from frequency->hex map)
+      -   Each of the three identifications need to meet a confidence criteria, say 70%, to make the list. Ex: (crash, rimshot, snare) 
+      - if less than 3 instruments identified with 70% confidence, i.e. list is (crash), fill the list with the second-and-third most confident guess for those that have been identified with confidence, in the case of crash it could have been a splash instead or a weirdly textured synth. (crash, splash, synth).    
+      - Ex. with 70% confidence, (guitar, vocal) -> (guitar, vocal, bass), bc the "guitar" guess has a 2nd-most-confident guess of "bass"
   
-    We then port this list to a sentence. 
+    We then port this to a sentence. 
     
       - Volume informs the intensity of the image, ie if loud/quiet vocal saying Heart, say "person screaming/yelling/whispering, action + object.
      
       - Action being looking at, running at, holding, etc, the object in question ("heart"). Choose action randomly. 
     
-      - Further abstract the crash, splash, drum (transient description) by mapping these to additional words. 
+      - Further abstract the crash, splash, drum (transient description) by mapping these to additional, more abstracted related words. 
  
-        - crash -> impact, splash -> wave, drum (being the most general category, can be ignored). (impact, wave)
-        - (kick, bass, drum) -> (canon, deep)
-        - (note, string, guitar) -> (floating, vibrate)
+        - (crash, splash, synth) -> (impact, wave, tech)
+        - (kick, bass, tom) -> (canon, deep, bounce)
+        - (cello, vocal, guitar) -> (floating, vibrate, pedal)
         - add these abstracted words to the final text description
 
-      - Category (drum, guitar, vocal, piano, bass) given by the last element of the initial transient description determines the verb (hits, plays, sings)
+      - Category (drum, guitar, violin, vocal, piano, bass) given by the initial transient description determines the verb (hits, picks, plays, sings, plays, plays)
+        - If Drum category and not Kick, assign "Drum stick strikes" as the verb
+      - Least likely category gets assigned to the beginning of the metaphorical/abstraction section, with the last element of the abstraction as adjective before it.
+      - Hierarchical ranking of transient volume determines theforeground-ness or background-ness
+      - If speech present, assign a "loudly" or "softly" according to volume of the speech
+      - t = transients, a = abstractions
+      - (ifspeech)"Person(volume) sings, (action) a (transciption), in the background to a (t1, t2) (verb) with a foreground (a3)(t3)(a2)(a1), the scene has a (hexcolorname) color palette."
 
-    Examples:
-      - (loud, heart, crash, splash, drum, hexcolorvalue, impact, wave) -> "Person loudly sings 'heart' over a soft drum crash hit that feels like a wave impact, the scene has a (hexcolorvalue) color palette 
-      - (loud, N/A, kick, bass, drum, hexcolorvalue, canon, deep) -> "Kick drum loud hit that feels like a deep canon, the scene has a (hexcolorvalue) color palette
-      - (quiet, N/A, note, string, guitar, hexcolorvalue, floating, vibrate) -> "Guitar quietly plays a note that feels like a vibrate floating, the scene has a (hexcolorvalue) color palette.  
+    #### Examples:
+      - (loud, heart, crash, splash, synth, hexcolorvalue, impact, wave, tech) -> "Person loudly sings, holding a heart, in the background of a Crash and Splash hit with a foreground techy synth wave impact, the scene has a (hexcolorname) color palette."
+        - Crash hit louder than the singer, so person is background. Background phrasing only used when speech present, otherwise, the metaphor is foreground. 
+      - (loud, N/A, kick, bass, tom, hexcolorvalue, canon, deep, bounce) -> "Kick and Bass hit with a foreground bouncey tom deep canon, the scene has a (hexcolorname) color palette"
+      - (quiet, N/A, cello, vocal, guitar, hexcolorvalue, floating, vibrate, pedal) -> "Cello and Vocal play with a foreground pedaly guitar vibrate floating, the scene has a (hexcolorname) color palette."  
 
 ### **Video Generation**
   - [CogVideo](https://github.com/THUDM/CogVideo) uses Transformer Neural Networks
