@@ -45,10 +45,10 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
       - (ifspeech)"Person(volume) sings, (action) a (transciption), in the background to a (t1, t2) (verb), with a foreground (a3)(t3)(a2)(a1), the scene has a (hexcolorname) color palette."
 
     #### Examples:
-      - (loud, heart, crash, splash, synth, hexcolorvalue, impact, wave, tech) -> "Person loudly sings, holding a heart, in the background of a Crash and Splash hit with a foreground techy synth wave impact, the scene has a (hexcolorname) color palette."
-        - Crash hit louder than the singer, so person is background. Background phrasing only used when speech present, otherwise, the metaphor is foreground. 
-      - (loud, N/A, kick, bass, tom, hexcolorvalue, canon, deep, bounce) -> "Kick hits and Bass plays, with a foreground bouncey tom deep canon, the scene has a (hexcolorname) color palette"
-      - (quiet, N/A, cello, vocal, guitar, hexcolorvalue, floating, vibrate, pedal) -> "Cello plays and Vocal sings, with a foreground pedaly guitar vibrate floating, the scene has a (hexcolorname) color palette."  
+      - (loud, heart, crash, splash, synth, hexcolorvalue, impact, wave, tech) -> "Person loudly sings, holding a heart, alongside a Crash and Splash hit with a foreground techy synth wave impact, the scene has a (hexcolorname) color palette."
+        - Abstraction is the foreground, if speech is present, it is "alongside" the background of the instruments. 
+      - (loud, N/A, kick, bass, tom, hexcolorvalue, canon, deep, bounce) -> "Kick hits and Bass plays in the background. In the foreground a bouncey tom deep canon, the scene has a (hexcolorname) color palette"
+      - (quiet, N/A, cello, vocal, guitar, hexcolorvalue, floating, vibrate, pedal) -> "Cello plays and Vocal sings in the background. In the foreground a pedaly guitar vibrate floating, the scene has a (hexcolorname) color palette."  
         - Vocal identified as an instrument present, but no intelligible speech was transcribed. Likely a "hmmmmm" or an "oooooooo" or similar.
 
 ### **Video Generation**
