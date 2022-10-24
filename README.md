@@ -40,7 +40,6 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
       - Category (drum, guitar, violin, vocal, piano, bass) given by the initial transient description determines the verb (hits, picks, plays, sings, plays, plays)
         - If Drum category and not Kick, assign "Drum stick strikes" as the verb
       - Least likely category gets assigned to the beginning of the metaphorical/abstraction section, with the last element of the abstraction as adjective before it.
-      - Hierarchical ranking of transient volume determines theforeground-ness or background-ness
       - If speech present, assign a "loudly" or "softly" according to volume of the speech
       - t = transients, a = abstractions
       - (ifspeech)"Person(volume) sings, (action) a (transciption), in the background to a (t1, t2) (verb) with a foreground (a3)(t3)(a2)(a1), the scene has a (hexcolorname) color palette."
