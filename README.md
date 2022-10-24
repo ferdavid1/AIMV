@@ -47,8 +47,9 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
     #### Examples:
       - (loud, heart, crash, splash, synth, hexcolorvalue, impact, wave, tech) -> "Person loudly sings, holding a heart, in the background of a Crash and Splash hit with a foreground techy synth wave impact, the scene has a (hexcolorname) color palette."
         - Crash hit louder than the singer, so person is background. Background phrasing only used when speech present, otherwise, the metaphor is foreground. 
-      - (loud, N/A, kick, bass, tom, hexcolorvalue, canon, deep, bounce) -> "Kick and Bass hit with a foreground bouncey tom deep canon, the scene has a (hexcolorname) color palette"
-      - (quiet, N/A, cello, vocal, guitar, hexcolorvalue, floating, vibrate, pedal) -> "Cello and Vocal play with a foreground pedaly guitar vibrate floating, the scene has a (hexcolorname) color palette."  
+      - (loud, N/A, kick, bass, tom, hexcolorvalue, canon, deep, bounce) -> "Kick hits and Bass plays with a foreground bouncey tom deep canon, the scene has a (hexcolorname) color palette"
+      - (quiet, N/A, cello, vocal, guitar, hexcolorvalue, floating, vibrate, pedal) -> "Cello plays and Vocal sings with a foreground pedaly guitar vibrate floating, the scene has a (hexcolorname) color palette."  
+        - Vocal identified as an instrument present, but no intelligible speech was transcribed. Likely a "hmmmmm" or an "oooooooo" or similar.
 
 ### **Video Generation**
   - [CogVideo](https://github.com/THUDM/CogVideo) uses Transformer Neural Networks
