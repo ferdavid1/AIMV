@@ -42,13 +42,13 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
       - Least likely category gets assigned to the beginning of the metaphorical/abstraction section, with the last element of the abstraction as adjective before it.
       - If speech present, assign a "loudly" or "softly" according to volume of the speech
       - t = transients, a = abstractions
-      - (ifspeech)"Person(volume) sings, (action) a (transciption), in the background to a (t1, t2) (verb) with a foreground (a3)(t3)(a2)(a1), the scene has a (hexcolorname) color palette."
+      - (ifspeech)"Person(volume) sings, (action) a (transciption), in the background to a (t1, t2) (verb), with a foreground (a3)(t3)(a2)(a1), the scene has a (hexcolorname) color palette."
 
     #### Examples:
       - (loud, heart, crash, splash, synth, hexcolorvalue, impact, wave, tech) -> "Person loudly sings, holding a heart, in the background of a Crash and Splash hit with a foreground techy synth wave impact, the scene has a (hexcolorname) color palette."
         - Crash hit louder than the singer, so person is background. Background phrasing only used when speech present, otherwise, the metaphor is foreground. 
-      - (loud, N/A, kick, bass, tom, hexcolorvalue, canon, deep, bounce) -> "Kick hits and Bass plays with a foreground bouncey tom deep canon, the scene has a (hexcolorname) color palette"
-      - (quiet, N/A, cello, vocal, guitar, hexcolorvalue, floating, vibrate, pedal) -> "Cello plays and Vocal sings with a foreground pedaly guitar vibrate floating, the scene has a (hexcolorname) color palette."  
+      - (loud, N/A, kick, bass, tom, hexcolorvalue, canon, deep, bounce) -> "Kick hits and Bass plays, with a foreground bouncey tom deep canon, the scene has a (hexcolorname) color palette"
+      - (quiet, N/A, cello, vocal, guitar, hexcolorvalue, floating, vibrate, pedal) -> "Cello plays and Vocal sings, with a foreground pedaly guitar vibrate floating, the scene has a (hexcolorname) color palette."  
         - Vocal identified as an instrument present, but no intelligible speech was transcribed. Likely a "hmmmmm" or an "oooooooo" or similar.
 
 ### **Video Generation**
