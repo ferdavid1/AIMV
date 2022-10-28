@@ -31,6 +31,7 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
       - Action being looking at, running at, holding, etc, the object in question ("heart"). Choose action randomly. 
     
       - Further abstract the crash, splash, drum (transient description) by mapping these to additional, more abstracted related words. 
+        - Text similiarity with Gensim [link](https://betterprogramming.pub/introduction-to-gensim-calculating-text-similarity-9e8b55de342d)
  
         - (crash, splash, synth) -> (impact, wave, tech)
         - (kick, bass, tom) -> (canon, deep, bounce)
