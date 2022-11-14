@@ -11,6 +11,8 @@ AI model that generates a Music Video from a .wav file, using Instrument Classif
     
     - [Sound Event Detection](https://arxiv.org/pdf/2107.05463)
     
+    - [Medley-solos-DB: a cross-collection dataset for musical instrument recognition](https://zenodo.org/record/2582103)
+    
   - #### Speech Recognition (is speech present?) and subsequent Speech Transcription (if present) using OpenAI Whisper ASR. use --language Spanish if Spanish, etc
     [Whisper](https://github.com/openai/whisper) uses Transformer Neural Networks
     
