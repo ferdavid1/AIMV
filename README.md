@@ -2,6 +2,8 @@
 AI model that generates a Music Video from a .wav file, using Instrument Classification, Speech Transcription, and Video Generation. 
 ## *Architecture*:
 ### Content Transcription
+  - #### Find Datasets
+    - [Ismir](https://www.ismir.net/resources/datasets/)
   - #### **Instrument Classification**
     - [Musical Instrument Identification](https://www.mdpi.com/1424-8220/22/8/3033/pdf?version=1650009477)
     
